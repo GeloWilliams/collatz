@@ -10,7 +10,8 @@ void test1()
 {
    Collatz c;
    std::cin >> c;
-   c.printResults();
+
+   std::cout << c;
 }
 
 

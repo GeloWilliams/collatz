@@ -10,6 +10,7 @@
 
 class Collatz {
    friend std::istream& operator>>(std::istream& input, Collatz& c);
+   friend std::ostream& operator<<(std::ostream& output, Collatz& c);
    
    public:
       /* Constructor */
@@ -20,7 +21,7 @@ class Collatz {
 
    private:
       /* calculates the number of steps per integer */
-      void numSteps(int num);
+      void numValues(int num);
       
       /* test single integer */
       int test_;
@@ -33,6 +34,9 @@ class Collatz {
 
       /* array of integers to be calculated */
       std::vector<int> series_;
+
+      /* array of values from an integer */
+      std::vector<int> values_;
 
 };
 
