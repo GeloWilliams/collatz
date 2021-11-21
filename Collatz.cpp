@@ -8,8 +8,18 @@
 std::istream& operator>>(std::istream& input, Collatz& c) 
 {
    std::cout << std::endl;
-   std::cout << "Enter a test integer." << std::endl;
-   input >> c.test_;
+   std::cout << "Enter a number." << std::endl;
+   while (!(input >> c.test_)) {
+      std::cout << "You must enter a number.\n";
+      input.clear();
+      input.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+   }
+   while ((c.test_ < 1)) {
+      std::cout << "You must enter a number greater than 1.\n";
+      input.clear();
+      input.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+      input >> c.test_;
+   }
    return input;
 }
 
